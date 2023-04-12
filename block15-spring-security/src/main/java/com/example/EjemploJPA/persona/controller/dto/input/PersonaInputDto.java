@@ -24,4 +24,5 @@ public class PersonaInputDto {
     private Date fechaCreacion;
     private String urlImagen;
     private Date fechaFinalizacion;
+    private Boolean admin;
 }

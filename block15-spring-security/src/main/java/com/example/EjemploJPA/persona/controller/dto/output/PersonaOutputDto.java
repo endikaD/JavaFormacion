@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,8 +22,9 @@ public class PersonaOutputDto {
     private Date fechaCreacion;
     private String urlImagen;
     private Date fechaFinalizacion;
+    private Boolean admin;
 
-    public PersonaOutputDto(Persona persona){
+    public PersonaOutputDto(Persona persona) {
         setIdPersona(persona.getIdPersona());
         setUsuario(persona.getUsuario());
         setNombre(persona.getNombre());
@@ -34,5 +36,6 @@ public class PersonaOutputDto {
         setFechaCreacion(persona.getFechaCreacion());
         setUrlImagen(persona.getUrlImagen());
         setFechaFinalizacion(persona.getFechaFinalizacion());
+        setAdmin(persona.getAdmin());
     }
 }

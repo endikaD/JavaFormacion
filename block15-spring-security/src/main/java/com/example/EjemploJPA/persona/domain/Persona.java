@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Date;
 
@@ -59,4 +60,7 @@ public class Persona {
 
     @OneToOne(mappedBy = "persona", fetch = FetchType.LAZY)
     private Profesor profesor;
+
+    @NotNull
+    private Boolean admin;
 }
