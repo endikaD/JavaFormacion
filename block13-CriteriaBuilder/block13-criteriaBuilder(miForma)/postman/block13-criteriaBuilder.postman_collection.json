@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "a56253a6-c565-4e9b-9800-61556143eff5",
+		"name": "block13-criteriaBuilder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20074209"
+	},
+	"item": [
+		{
+			"name": "Añadir Persona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\":\"hdwpd\",\r\n    \"contraseña\":\"ret3\",\r\n    \"nombre\":\"Pepe\",\r\n    \"apellido\":\"Del Valle\",\r\n    \"emailCompañia\":\"endikadv@gmail.com\",\r\n    \"emailPersonal\":\"endikadv@gmail.es\",\r\n    \"city\":\"Sestao\",\r\n    \"activo\":\"True\",\r\n    \"fechaCreacion\":\"2023-01-15T09:26:00.176+00:00\",\r\n    \"urlImagen\":\"www.google.com\",\r\n    \"fechaFinalizacion\":\"2023-01-24T09:26:00.176+00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/persona",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"persona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener con Query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/persona/get?nombre=Endika",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"persona",
+						"get"
+					],
+					"query": [
+						{
+							"key": "usuario",
+							"value": "hcVdcdfd",
+							"disabled": true
+						},
+						{
+							"key": "nombre",
+							"value": "Endika"
+						},
+						{
+							"key": "apellido",
+							"value": "Del Valle",
+							"disabled": true
+						},
+						{
+							"key": "fechaCreacion",
+							"value": "20-01-2023",
+							"disabled": true
+						},
+						{
+							"key": "dateCondition",
+							"value": "less",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "num",
+							"value": "5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

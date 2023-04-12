@@ -1,0 +1,2 @@
+2023-02-28T13:17:47.059+01:00  WARN 22016 --- [main] c.e.l.b.Block5LoggingApplication         : Mensaje WARNING
+2023-02-28T13:17:47.062+01:00 ERROR 22016 --- [main] c.e.l.b.Block5LoggingApplication         : Mensaje ERROR

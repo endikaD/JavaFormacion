@@ -1,0 +1,44 @@
+
+
+1- Hacemos el Dockerfile
+FROM openjdk:19
+EXPOSE 8080
+COPY /target/*.jar /usr/local/lib/spring.jar
+ENTRYPOINT ["java","-jar","/usr/local/lib/spring.jar"]
+
+2- Hacemos  el application.properties
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.hibernate.show-sql=true
+spring.datasource.url=jdbc:postgresql://postgres_test:5432/postgres    //postgres_test es el nombre del contendedor dee Postgres
+spring.datasource.username=postgres
+spring.datasource.password=contrasena
+spring.datasource.initialization-mode=always
+spring.datasource.initialize=true
+spring.datasource.continue-on-error=true
+
+3- Añadimos la dependendia de Postgres
+<dependency>
+	<groupId>org.postgresql</groupId>
+	<artifactId>postgresql</artifactId>
+	<scope>runtime</scope>
+</dependency>
+
+4- Hacemos la configuracion de Maven
+"run"
+clean install -DskipTests
+
+5- Creamos la network
+docker network create mynetwork		//"mynetwork" es el nombre de la network
+
+6- Creamos la imagen postgres
+docker run --network mynetwork --name postgres_test -e POSTGRES_USER=postgres 
+-e POSTGRES_PASSWORD=contrasena -e POSTGRES_DB=test -p 5432:5432 postgres
+
+7- Ejecutamos el botón de Maven en intellj para generar el jar en la carpeta tarjet.
+
+8- Ejecutamos el comando “docker build -t spring .” desde la carpeta raíz del proyecto en el cmd para 
+crear la imagen de docker que posteriormente ejecutaremos.
+
+9-Por último, ejecutaremos el comando “docker run --network mynetwork --name programa_spring 
+-p 8080:8080 spring”

@@ -1,0 +1,712 @@
+{
+	"info": {
+		"_postman_id": "70bd08ae-fc16-4169-8501-5f1bfb6c10c6",
+		"name": "block7-crud-validation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20074209"
+	},
+	"item": [
+		{
+			"name": "profesor",
+			"item": [
+				{
+					"name": "Añadir Profesor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idPersona\":2,\r\n    \"comments\":\"Muy buen profesor\",\r\n    \"branch\":\"Tecnologia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/profesor",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profesor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Profesor Por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/profesor/id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profesor",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Profesores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/profesor/profesores",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"profesor",
+								"profesores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Profesor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/profesor/borrar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profesor",
+								"borrar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Profesor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comments\":\"Muy mal profesor\",\r\n    \"branch\":\"Bases de Datos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/profesor/actualizar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profesor",
+								"actualizar",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "estudiante",
+			"item": [
+				{
+					"name": "Añadir Estudiante",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"idPersona\":4,\r\n    \"idProfesor\":1,\r\n    \"horasPorSemana\":30,\r\n    \"comentarios\":\"Malo\",\r\n    \"branch\":\"Tecnologia\",\r\n    \"asignaturas\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/estudiante",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudiante"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Estudiante Por Id Simple",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/estudiante/1?outputType=simple",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudiante",
+								"1"
+							],
+							"query": [
+								{
+									"key": "outputType",
+									"value": "simple"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Estudiante Por Id Full",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/estudiante/1?outputType=full",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudiante",
+								"1"
+							],
+							"query": [
+								{
+									"key": "outputType",
+									"value": "full"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Estudiantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/estudiante/estudiantes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudiante",
+								"estudiantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Estudiante",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/estudiante/borrar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudiante",
+								"borrar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Estudiante",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idPersona\":1,\r\n    \"horasPorSemana\":30,\r\n    \"comentarios\":\"Bueno\",\r\n    \"branch\":\"Tecnologia\",\r\n    \"asignaturas\": [1]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/estudiante/actualizar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudiante",
+								"actualizar",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "asignatura",
+			"item": [
+				{
+					"name": "Añadir Asignatura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"asignatura\":\"Programacion\",\r\n    \"comentarios\":\"Mediocre\",\r\n    \"fechaInicial\":\"2020-01-24T09:26:00.176+00:00\",\r\n    \"fechaFinal\":\"2023-01-24T09:26:00.176+00:00\",\r\n    \"estudiates\":[]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/asignatura",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"asignatura"
+							],
+							"query": [
+								{
+									"key": "idAsignatura",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "idEstudiante",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Asignatura a Estudiante",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/asignatura/asignatura?idAsignatura=1&idEstudiante=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"asignatura",
+								"asignatura"
+							],
+							"query": [
+								{
+									"key": "idAsignatura",
+									"value": "1"
+								},
+								{
+									"key": "idEstudiante",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Asignatura Por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/asignatura/id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"asignatura",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Asignaturas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/asignatura/asignaturas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"asignatura",
+								"asignaturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Asignatura",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/asignatura/borrar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"asignatura",
+								"borrar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Asignatura",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"asignatura\":\"Programacion\",\r\n    \"comentarios\":\"Mal\",\r\n    \"fechaInicial\":\"2020-01-24T09:26:00.176+00:00\",\r\n    \"fechaFinal\":\"2023-01-24T09:26:00.176+00:00\",\r\n    \"estudiates\":[5]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/asignatura/actualizar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"asignatura",
+								"actualizar",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "persona",
+			"item": [
+				{
+					"name": "Añadir Persona",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\":\"hcVd\",\r\n    \"contraseña\":\"ret3\",\r\n    \"nombre\":\"Endika\",\r\n    \"apellido\":\"Del Valle\",\r\n    \"emailCompañia\":\"endikadv@gmail.com\",\r\n    \"emailPersonal\":\"endikadv@gmail.es\",\r\n    \"city\":\"Sestao\",\r\n    \"activo\":\"True\",\r\n    \"fechaCreacion\":\"2023-01-24T09:26:00.176+00:00\",\r\n    \"urlImagen\":\"www.google.com\",\r\n    \"fechaFinalizacion\":\"2023-01-24T09:26:00.176+00:00\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/persona",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persona"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Persona Por Nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/persona/nombre/endikaDV",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persona",
+								"nombre",
+								"endikaDV"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Persona Por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/persona/id/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persona",
+								"id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Personas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/persona/personas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persona",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Persona",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/persona/borrar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persona",
+								"borrar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Persona",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\":\"endikasDV\",\r\n    \"contraseña\":\"ret3\",\r\n    \"nombre\":\"Endikaaaa\",\r\n    \"apellido\":\"Cilla\",\r\n    \"emailCompañia\":\"endikadv@gmail.com\",\r\n    \"emailPersonal\":\"endikadv@gmail.es\",\r\n    \"city\":\"Sestao\",\r\n    \"activo\":\"True\",\r\n    \"fechaCreacion\":\"2023-01-24T09:26:00.176+00:00\",\r\n    \"urlImagen\":\"www.google.com\",\r\n    \"fechaFinalizacion\":\"2023-01-24T09:26:00.176+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/persona/actualizar/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persona",
+								"actualizar",
+								"2"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "feign",
+			"item": [
+				{
+					"name": "Obtener Profesor RestTemplate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/persona/profesor/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persona",
+								"profesor",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Profesor Feing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/persona/feign/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persona",
+								"feign",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Añadir Persona",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\":\"cVubbd\",\r\n    \"contraseña\":\"ret3\",\r\n    \"nombre\":\"Endika\",\r\n    \"apellido\":\"Del Valle\",\r\n    \"emailCompañia\":\"endikadv@gmail.com\",\r\n    \"emailPersonal\":\"endikadv@gmail.es\",\r\n    \"city\":\"Sestao\",\r\n    \"activo\":\"True\",\r\n    \"fechaCreacion\":\"2023-01-24T09:26:00.176+00:00\",\r\n    \"urlImagen\":\"www.google.com\",\r\n    \"fechaFinalizacion\":\"2023-01-24T09:26:00.176+00:00\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/persona",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"persona"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Añadir Profesor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idPersona\":1,\r\n    \"comments\":\"Muy buen profesor\",\r\n    \"branch\":\"Tecnologia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/profesor",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"profesor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

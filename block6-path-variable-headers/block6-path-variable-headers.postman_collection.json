@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "bbc7297b-b15d-4e70-97b7-02fa1cbb9494",
+		"name": "block6-path-variable-headers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20074209"
+	},
+	"item": [
+		{
+			"name": "Post Persona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"nombre\":\"Endika\",\r\n    \"poblacion\":\"Sestao\",\r\n    \"edad\":23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9080/usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/usuario/2",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"usuario",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HashMap",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/post?var1=1&var2=2",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "var1",
+							"value": "1"
+						},
+						{
+							"key": "var2",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "fe601dc9-c851-41ef-be47-057be155c6ba",
+		"name": "block11-upload-download-files",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20074209"
+	},
+	"item": [
+		{
+			"name": "Subir Archivos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": [
+								"/C:/Users/endika.delvalle/Desktop/Endika/Linkedin/images.jpg",
+								"/C:/Users/endika.delvalle/Desktop/Endika/Linkedin/images2.jpg.jpg"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/files/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subir Archivos DB",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/endika.delvalle/Desktop/Endika/Linkedin/foto1.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/files/upload/db",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"upload",
+						"db"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Datos Por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/files/id/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Datos Por Nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/files/nombre/foto1.jpg",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"nombre",
+						"foto1.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Foto Por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/files/idmap/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"idmap",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Foto Por Nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/files/nombremap/foto1.jpg",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"nombremap",
+						"foto1.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Descargar Por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/files/descargarid/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"descargarid",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Descargar Por Nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/files/descargarnombre/foto1.jpg",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"descargarnombre",
+						"foto1.jpg"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

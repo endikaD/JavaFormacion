@@ -1,0 +1,44 @@
+services:
+
+  docker_spring_boot:
+    container_name: spring3
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: spring3:1.0.0
+    ports:
+      - "9081:9080" #postman:server.port
+    networks:
+      - bosonit-network
+
+  postgres_db:
+    container_name: postgresCont
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=contrasena
+      - POSTGRES_DB=test
+    links:
+      - "docker_spring_boot"
+    image: postgres
+    restart: always
+    ports:
+      - "5433:5432" #postgres:properties
+    networks:
+      - bosonit-network
+    depends_on:
+      - docker_spring_boot
+
+  cloudbeaver:
+    image: dbeaver/cloudbeaver
+    container_name: "container-dbeaver"
+    restart: always
+    ports:
+      - '8081:8978'
+    depends_on:
+      - postgres_db #depende del servicio no del nombre del contendedor
+    networks:
+      - bosonit-network
+
+networks:
+  bosonit-network:
+    driver: bridge

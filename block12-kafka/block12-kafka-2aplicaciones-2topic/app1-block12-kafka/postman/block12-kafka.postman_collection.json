@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "30429f56-d2d3-4ca6-920c-c4736737f099",
+		"name": "block12-kafka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20074209"
+	},
+	"item": [
+		{
+			"name": "Añadir Mensaje 8081",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/publicar?message=Hoaaa",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"publicar"
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "Hoaaa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Añadir Mensaje 8082",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/publicar?message=Holaaaaa",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"publicar"
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "Holaaaaa"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

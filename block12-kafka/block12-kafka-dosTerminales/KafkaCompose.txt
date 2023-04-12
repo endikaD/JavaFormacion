@@ -1,0 +1,44 @@
+1-Hcemos el Docker-Compose y ejecutamos
+
+version: '3.7'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 2181:2181
+
+  kafka-broker-1:
+    image: confluentinc/cp-kafka:latest
+    container_name: kafka-broker-1
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://broker:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+
+2-Abrimos dos terminales
+
+3-Escribimos en el T1 y T2:
+docker exec -it kafka-broker-1 bash
+(kafka-broker-1 es el nombre del contenedor)
+
+4-Creamos el topico en el T1
+kafka-topics --bootstrap-server kafka-broker-1:9092 --create --topic probandoKafka
+
+5-Creamos el console en el T1 para escribir mensajes (PRODUCER)
+kafka-console-producer --bootstrap-server kafka-broker-1:9092 --topic probandoKafka
+
+6-Creamos el console en el T2 para recibir mensajes (CONSUMER)
+kafka-console-consumer --bootstrap-server kafka-broker-1:9092 --topic probandoKafka --from-beginning

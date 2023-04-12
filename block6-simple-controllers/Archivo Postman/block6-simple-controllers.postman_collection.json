@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "d7d7fd1d-be7f-4676-8491-316bf71b50bb",
+		"name": "block6-simple-controllers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20074209"
+	},
+	"item": [
+		{
+			"name": "Hola + nombre",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Añadir Persona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Endika\",\r\n    \"poblacion\":\"Sestao\",\r\n    \"edad\":23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9080/useradd",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"useradd"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

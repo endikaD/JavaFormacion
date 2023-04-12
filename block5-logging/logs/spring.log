@@ -1,0 +1,4 @@
+2023-02-28T13:03:37.542+01:00  WARN 19116 --- [main] c.e.l.b.Block5LoggingApplication         : Mensaje a nivel de WARNING
+2023-02-28T13:03:37.545+01:00 ERROR 19116 --- [main] c.e.l.b.Block5LoggingApplication         : Mensaje a nivel de ERROR
+2023-02-28T13:12:33.750+01:00  WARN 5036 --- [main] c.e.l.b.Block5LoggingApplication         : Mensaje WARNING
+2023-02-28T13:12:33.753+01:00 ERROR 5036 --- [main] c.e.l.b.Block5LoggingApplication         : Mensaje ERROR
