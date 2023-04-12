@@ -1,0 +1,1 @@
+mvn clean verify sonar:sonar -Dsonar.projectKey=junit -Dsonar.projectName='block14' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_099d351eb5f799cda8ea8599e59e5737eaa1fe82
