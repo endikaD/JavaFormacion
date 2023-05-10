@@ -1,6 +1,7 @@
 package JesuitasDeFiesta.JesuitasDeFiesta.actividad.controller.dto.output;
 
 import JesuitasDeFiesta.JesuitasDeFiesta.actividad.domain.Actividad;
+import JesuitasDeFiesta.JesuitasDeFiesta.foto.domain.Foto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,8 +30,5 @@ public class ActividadOutputDto {
         setHora(actividad.getHora());
         setEtapa(actividad.getEtapa());
         setParticipantesMax(actividad.getParticipantesMax());
-    }
-
-    public ActividadOutputDto(List<Actividad> actividad) {
     }
 }

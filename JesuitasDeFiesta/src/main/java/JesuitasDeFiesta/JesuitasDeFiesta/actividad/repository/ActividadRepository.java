@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ActividadRepository extends JpaRepository<Actividad, Integer> {
     List<Actividad> findByFecha(String fecha);
-    List<Actividad> findByEtapa(String etapa);
+    List<Actividad> findByEtapaContains(String etapa);
     Actividad findByTitulo(String titulo);
 
 }

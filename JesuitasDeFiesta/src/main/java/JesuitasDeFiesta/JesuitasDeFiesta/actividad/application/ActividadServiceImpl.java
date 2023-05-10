@@ -76,14 +76,14 @@ public class ActividadServiceImpl implements ActividadService {
     @Override
     public List<ActividadOutputDto> obtenerActividadPorEtapa(String etapa) {
         List<ActividadOutputDto> actividadOutputDtoArrayList = new ArrayList<>();
-        for (Actividad actividad: actividadRepository.findByEtapa(etapa)) {
+        for (Actividad actividad: actividadRepository.findByEtapaContains(etapa)) {
             actividadOutputDtoArrayList.add(new ActividadOutputDto(actividad));
         }
         return actividadOutputDtoArrayList;
     }
 
     @Override
-    public ActividadOutputDto obtenerActividadPorTitulo(String titulo) {
+    public ActividadOutputDto obtenerActividadPorTitulo(String titulo) { // Meter cContains y Lista
         Actividad actividad = actividadRepository.findByTitulo(titulo);
         return new ActividadOutputDto(actividad);
     }

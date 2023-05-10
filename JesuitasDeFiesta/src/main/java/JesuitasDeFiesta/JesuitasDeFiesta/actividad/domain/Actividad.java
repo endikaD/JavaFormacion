@@ -34,7 +34,7 @@ public class Actividad {
     private String etapa;
     @Column(name = "participantes")
     private Integer participantesMax;
-    @OneToMany(mappedBy = "actividad")
+    @OneToMany(mappedBy = "actividad", fetch = FetchType.EAGER)
     private List<Foto> fotos;
     @OneToMany(mappedBy = "actividad")
     private List<Apuntado> apuntados;

@@ -23,7 +23,7 @@ public class FotoOutputDto {
     public FotoOutputDto(Foto foto) {
         setIdFoto(foto.getIdFoto());
         setTitulo(foto.getTitulo());
-        setDescripcion(foto.getDescripcion());
+        setDescripcion(foto.getD());
         setFecha(foto.getFecha());
         setActividadOutputDto(new ActividadOutputDto(foto.getActividad()));
     }

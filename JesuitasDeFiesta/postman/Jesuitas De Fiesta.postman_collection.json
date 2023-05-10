@@ -345,33 +345,6 @@
 			"name": "foto",
 			"item": [
 				{
-					"name": "Añadir Foto",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"titulo\":\"Baloncesto\",\r\n    \"descripcion\":\"Torneo 3x3 Baloncesto\",\r\n    \"fecha\":\"13 de Abril\",\r\n    \"idActividad\":1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8080/foto",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"foto"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Actualizar Foto",
 					"request": {
 						"method": "PUT",
@@ -462,6 +435,37 @@
 									"value": "5",
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subir Foto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/C:/Users/endika.delvalle/Desktop/Endika/Linkedin/images.jpg",
+										"/C:/Users/endika.delvalle/Desktop/Endika/Linkedin/images2.jpg.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/foto",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"foto"
 							]
 						}
 					},

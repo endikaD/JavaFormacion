@@ -27,7 +27,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         usuario.setRol(usuarioInputDto.getRol());
         usuario.setEdad(usuarioInputDto.getEdad());
         usuario.setEtapa(usuarioInputDto.getEtapa());
-        usuario.setEstado(usuarioInputDto.getEstado());
+        usuario.setEstado("PENDIENTE");                 //SERVICIO DE PENDIENTE A ACEPTADO(ACT)
 
         usuarioRepository.save(usuario);
         return new UsuarioOutputDto(usuario);
