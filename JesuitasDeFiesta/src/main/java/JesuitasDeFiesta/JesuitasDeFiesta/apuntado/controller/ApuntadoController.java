@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @RequestMapping("/apuntado")
+@CrossOrigin(origins = "*")
 public class ApuntadoController {
     @Autowired
     ApuntadoService apuntadoService;

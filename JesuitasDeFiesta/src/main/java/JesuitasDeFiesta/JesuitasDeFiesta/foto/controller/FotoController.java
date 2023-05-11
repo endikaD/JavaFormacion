@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/foto")
+@CrossOrigin(origins = "*")
 public class FotoController {
     @Autowired
     private FotoService fotoService;
