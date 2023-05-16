@@ -1,0 +1,2 @@
+- Registro/Autorización sin implementar, y lo necesitas para todo xq la página según entras necesita login.
+- RF9: Aceptar un usuario registrado antes de que se pueda loguear, implicaría un servicio nuevo
